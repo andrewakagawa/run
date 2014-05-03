@@ -78,12 +78,12 @@ function watchLocation(){
 }
 
 function timer() {	
-	timestamp = new Date();
+	timestamp = new Date().getTime();
 
 }
 
 function watchTimer(){
-	time = new Date();
+	time = new Date().getTime();
 	var elapsed = time - timestamp;
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
 }
