@@ -1,3 +1,4 @@
+
 //initialize variables
 var map        = null;
 var GeoWatchID = null;
@@ -20,13 +21,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
  
 function onDeviceReady() {
 	
-
-		// Instantiate a geolocation watch 
-		GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
+	// Instantiate a geolocation watch 
+	GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
 		
-		timerID = setInterval ( watchTimer, 1000 );
+	timerID = setInterval ( watchTimer, 1000 );
 
-		trackID = setInterval ( watchLocation, 1000 );		
+	trackID = setInterval ( watchLocation, 1000 );		
 		
 }
 
@@ -53,8 +53,8 @@ function onGeolocationSuccess(position) {
 	
 	marker = L.marker([lat, lng]);
 		map.addLayer(marker);
-		marker.bindPopup('Running, Running, GONE!')
-		.openPopup();	
+		//marker.bindPopup('Running, Running, GONE!')
+		//.openPopup();	
 }
 	
 // onError Callback receives a PositionError object
@@ -85,5 +85,5 @@ function timer() {
 function watchTimer(){
 	time = new Date();
 	var elapsed = time - timestamp;
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed;	
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
 }
