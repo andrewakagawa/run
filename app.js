@@ -24,9 +24,9 @@ function onDeviceReady() {
 	// Instantiate a geolocation watch 
 	GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
 		
-	timerID = setInterval ( watchTimer, 1000 );
-
 	trackID = setInterval ( watchLocation, 1000 );		
+
+	timerID = setInterval ( watchTimer, 1000 );
 		
 }
 
@@ -41,8 +41,7 @@ function onGeolocationSuccess(position) {
 	altAcr    = position.coords.altitudeAccuracy;
 	heading   = position.coords.heading;
 	speed     = position.coords.speed;
-	//timestamp = new Date();
-	//time      = new Date(position.timestamp);
+
 	
 	map = L.map('map', { zoomControl:false }).setView([lat , lng], 15);	
 
@@ -53,7 +52,7 @@ function onGeolocationSuccess(position) {
 	
 	marker = L.marker([lat, lng]);
 		map.addLayer(marker);
-		//marker.bindPopup('Running, Running, GONE!')
+		//marker.bindPopup('add a comment here')
 		//.openPopup();	
 }
 	
@@ -78,12 +77,12 @@ function watchLocation(){
 }
 
 function timer() {	
-	timestamp = new Date().getTime();
+	timestamp = new Date();
 
 }
 
 function watchTimer(){
-	time = new Date().getTime();
+	time = new Date();
 	var elapsed = time - timestamp;
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
 }
