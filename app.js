@@ -15,8 +15,8 @@ var speed      = null;
 var timestamp  = null;
 var time       = null;
 
-var init_lat = null;
-var init_lng = null;
+var last_lat = null;
+var last_lng = null;
 var total_dist = null;
 
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
@@ -80,24 +80,33 @@ function watchLocation(){
 
 function start() {	
 	timestamp = new Date();
+        last_time = new Date();
         last_lat = lat;
         last_lng = lng;
 }
 
 function watchTimer(){
+        //set new timestamp
 	time = new Date();
+
+        //get elapsed time from start
 	var elapsed = time - timestamp;
+
+        //watch distance
         var dist = getDistance(last_lat, last_lng, lat, lng);
 	total_dist += dist;
 
+        //print to the app
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
+
+        //reset lat,lng,time for next watch
         last_lat = lat;
         last_lng = lng;
 
 }
 
 function getDistance(lat1,lon1,lat2,lon2) {
-	var R = 6.371; // Radius of the earth in km
+	var R = 6371000; // Radius of the earth in km
 	var dLat = deg2rad(lat2-lat1);  // deg2rad below
 	var dLon = deg2rad(lon2-lon1); 
 	var a = 
