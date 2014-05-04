@@ -15,6 +15,10 @@ var speed      = null;
 var timestamp  = null;
 var time       = null;
 
+var init_lat = null;
+var init_lng = null;
+
+
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
 document.addEventListener("deviceready", onDeviceReady, false);
  
@@ -64,7 +68,6 @@ function onGeolocationError(error) {
 
 function watchLocation(){
 
-
 	// add a marker in the given location, attach some popup content to it and open the popup		
 	var circleMarker = L.circleMarker([lat, lng],{
     	color: 'red',
@@ -75,14 +78,36 @@ function watchLocation(){
 	marker.setLatLng([lat, lng]);	
 }
 
-function timer() {	
+function start() {	
 	timestamp = new Date();
+        init_lat = lat;
+        init_lng = lng;
 
 }
 
 function watchTimer(){
 	time = new Date();
 	var elapsed = time - timestamp;
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
+
+        var dist = getDistance(init_lat, init_lng, lat, lng);
+
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed + '<br>distance: ' + dist;	
 }
 
+function getDistance(lat1,lon1,lat2,lon2) {
+	var R = 6371; // Radius of the earth in km
+	var dLat = deg2rad(lat2-lat1);  // deg2rad below
+	var dLon = deg2rad(lon2-lon1); 
+	var a = 
+	  Math.sin(dLat/2) * Math.sin(dLat/2) +
+	  Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+	  Math.sin(dLon/2) * Math.sin(dLon/2)
+	  ; 
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	var d = R * c; // Distance in km
+	return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
+}
