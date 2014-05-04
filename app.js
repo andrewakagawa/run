@@ -81,6 +81,7 @@ function watchLocation(){
 }
 
 function start() {	
+        dist = null; //reset distance
 	timestamp = new Date();
         last_time = new Date();
         last_lat = lat;
