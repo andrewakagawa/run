@@ -1,0 +1,12 @@
+#welcome {
+	text-align: center;
+}
+
+
+.fit-default {
+	display:block;
+	margin:0 auto;
+	width:208px;
+	height:188px;
+	background: url("images/rabbitavatar_fit default.png") no-repeat right center;
+}

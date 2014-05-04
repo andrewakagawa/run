@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Run Quest</title>
+	
+    <!-- external links to jquery -->
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" /> 
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>  -->
+   	<link rel="stylesheet" href="themes/runquest.min.css" />
+   	 <link rel="stylesheet" href="runquestcustom.css" />
+
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+
+   	<!--<script src="http://cdn.sencha.io/touch/1.1.0/sencha-touch.js"></script> 
+	<script src="http://cdn.sencha.io/touch/1.1.0/resources/css/sencha-touch.css"></script> 
+   	<script src="index.js"></script> -->
+    
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+ <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+ <![endif]-->
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+  
+ 
+    <!-- external links to phonegap-->      
+	<script src="phonegap.js"></script>
+    
+    <!-- internal link to app.js-->
+	<script src="app.js"></script>
+        
+
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; left:0; width:100%; height:100%; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<Body>
+	<!--Page: Welcome -->
+	<div id="welcome"
+		data-role="page"
+		data-theme="a"
+		data-title="Welcome to RunQuest">
+
+	<div data-role="content">
+		<h1>Welcome to RunQuest</h1>
+		<div class="fit-default"><img src="images/rabbitavatar_crown.png" /></div>
+		<a href="#tutorial"
+			data-role="button"
+			data-icon="arrow-r"
+			data-theme="b">
+			Start!</a>
+	</div></div>
+
+
+
+	<!--Page: Tutorial-->
+		<div id="tutorial"
+			data-role="page"
+			data-theme="a"
+			data-title="Tutorial">
+			<div data-role="tabs" id="tabs">
+				  <div data-role="navbar">
+				    <ul>
+				      <li><a href="tutorialone.html" data-transition="slide" data-ajax="false">1</a></li>
+				      <li><a href="tutorialtwo.html" data-transition="slide" data-ajax="false">2</a></li>
+				      <li><a href="tutorialthree.html" data-transition="slide" data-ajax="false">3</a></li>
+				      <li><a href="tutorialfour.html" data-transition="slide" data-ajax="false">4</a></li>
+
+				    </ul>
+				  </div>
+				  <!-- <div id="one" class="ui-body-a ui-content">
+				    <h1>Start your run</h1>
+				    <a href="#two" data-transition="slide"
+				    	data-role="button"
+				    	data-icon="arrow-r"
+				    	data-theme="b">
+				    	Next!</a>
+				    </div>
+				 <div id="two" class="ui-body-a ui-content">
+				    <h1>Unlock your weekly map</h1>
+				    <a href="#three" data-transition="slide"
+				    	data-role="button"
+				    	data-icon="arrow-r"
+				    	data-theme="b">
+				    	Next!</a>
+				    </div>
+
+				<div id="three" class="ui-body-a ui-content">
+				    <h1>Join a group to tackle bigger maps together</h1>
+				    <a href="#four" data-transition="slide"
+				    	data-role="button"
+				    	data-icon="arrow-r"
+				    	data-theme="b">
+				    	Next</a>
+				</div>
+
+				<div id="four" class="ui-body-a ui-content">
+				    <h1>Compete for a spot on the leaderboard</h1>
+				    <a href="#home"
+				    	data-role="button"
+				    	data-icon="arrow-r"
+				    	data-theme="b">
+				    	Start your run</a>
+				    </div> -->
+
+			</div>
+		</div>
+
+
+
+
+
+
+
+
+  	<!-- Page: home -->
+	<!-- <div id="home"
+		data-role="page"
+		data-theme="a"
+		data-title="View Source: Home"> -->
+        
+        <!-- header -->
+		<!-- <div data-role="header"
+			data-position="fixed">
+			<h1>Debug App</h1>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				class="ui-btn-right"
+				>Info</a>
+		</div>   -->
+        <!-- end header -->
+        
+        <!-- content -->
+	  	<!-- <div data-role="content">
+              
+              <button onClick="timer()">Start</button>	 
+ 			  
+              <div id="map"></div>
+          
+		</div> -->
+        <!-- end content --> 
+        
+        <!-- footer -->
+       <!--  <div data-role="footer"
+			data-position="fixed"
+			data-id="vs_footer">
+			 -->
+            <!-- navbar -->
+        <!--     <div data-role="navbar">
+				<ul>
+					<li><a href="#debug" 
+					data-role="button"
+					data-icon="arrow-r"
+					>Debug</a></li>                      
+				</ul>
+			</div> -->
+            <!-- navbar -->
+		
+        <!-- </div> -->
+        <!-- end footer -->             
+	<!-- </div> -->
+    <!--end page -->
+    
+        <!-- Page: Geolocation -->
+	<div id="debug"
+		data-role="page"
+        data-theme="a"
+		data-title="View Source: Debug">
+		
+        <!-- header -->
+        <div data-role="header"
+			data-position="fixed"
+			data-id="vs_header">
+			<h1>Debug</h1>
+			<a href="#home"
+				data-icon="home"
+				data-iconpos="notext"
+				>Home</a>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				>Info</a>
+		</div>
+        <!-- header -->
+        
+        <!-- content -->
+        <div data-role="content">
+        		<div id="developerData">    
+                <p id="geo">Loading...</p>
+                </div>
+        </div>
+        <!-- end content -->
+       
+		<!-- footer -->
+        <div data-role="footer"
+			data-position="fixed"
+			data-id="vs_footer">
+            
+            <!-- navbar -->
+            <div data-role="navbar">
+				<ul>
+					<li><a href="#" 
+					data-role="button"
+					data-icon="arrow-l"
+                    data-rel="back"
+					>back</a></li>
+				</ul>
+			</div>
+            <!-- navbar -->
+            
+		</div>
+        <!-- end footer -->
+	</div>
+    <!-- page -->
+
+</Body>
+</Html>
