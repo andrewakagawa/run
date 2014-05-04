@@ -18,6 +18,10 @@
 	margin-bottom:50px;
 }
 
+.centered {
+	display:block;
+	margin:0 auto;
+}
 .groupicon {
 	width:100%;
 }
@@ -26,10 +30,32 @@
 	display:inline;
 }
 
+div.rabbitfull {
+	width:208px;
+	height:188px;
+}
+
+.avatar {
+	width:50px;
+}
+
 .fit-default {
+	background: url("images/rabbitavatar_fit_default.png") no-repeat right center;
+	width:100%;
+}
+
+.fit-blue {
 	display:block;
 	margin:0 auto;
 	width:208px;
 	height:188px;
-	background: url("images/rabbitavatar_fit default.png") no-repeat right center;
+	background: url("images/rabbitavatar_fit_blue.png") no-repeat right center;
+}
+
+.weekly-pink {
+	display:block;
+	margin:0 auto;
+	width:208px;
+	height:188px;
+	background: url("images/rabbitavatar_fit_blue.png") no-repeat right center;
 }
