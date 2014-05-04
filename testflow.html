@@ -52,7 +52,7 @@
 	<div data-role="content">
 		<h1>Welcome to RunQuest</h1>
 		<div class="fit-default"><img src="images/rabbitavatar_crown.png" /></div>
-		<a href="#tutorial"
+		<a href="#tutorial1"
 			data-role="button"
 			data-icon="arrow-r"
 			data-theme="b">
@@ -61,57 +61,67 @@
 
 
 
-	<!--Page: Tutorial-->
-		<div id="tutorial"
+	<!--Page: Tutorial 1-->
+		<div id="tutorial1"
 			data-role="page"
 			data-theme="a"
-			data-title="Tutorial">
-			<div data-role="tabs" id="tabs">
-				  <div data-role="navbar">
-				    <ul>
-				      <li><a href="#one" data-ajax="false">1</a></li>
-				      <li><a href="#two" data-ajax="false">2</a></li>
-				      <li><a href="#three" data-ajax="false">3</a></li>
-				      <li><a href="#four" data-ajax="false">4</a></li>
-
-				    </ul>
-				  </div>
-				  <div id="one" class="ui-body-a ui-content">
+			data-title="Tutorial Step One">
+		<div class="ui-body-a ui-content tutorial" data-role="content">
 				    <h1>Start your run</h1>
-				<!--     <a href="#two" data-transition="slide"
+				    <p>1 of 4</p>
+				    <a href="#tutorial2" data-transition="slide"
 				    	data-role="button"
 				    	data-icon="arrow-r"
 				    	data-theme="b">
-				    	Next!</a> -->
+				    	Next!</a>
 				    </div>
-				 <div id="two" class="ui-body-a ui-content">
+		</div>
+
+	<!--Page: Tutorial 2-->
+		<div id="tutorial2"
+			data-role="page"
+			data-theme="a"
+			data-title="Tutorial Step Two">
+				 <div class="ui-body-a ui-content tutorial" data-role="content">
 				    <h1>Unlock your weekly map</h1>
-				  <!--   <a href="#three" data-transition="slide"
+				    <p>2 of 4</p>
+				    <a href="#tutorial3" data-transition="slide"
 				    	data-role="button"
 				    	data-icon="arrow-r"
 				    	data-theme="b">
-				    	Next!</a> -->
+				    	Next!</a>
 				    </div>
+		</div>
 
-				<div id="three" class="ui-body-a ui-content">
+	<!--Page: Tutorial 3-->
+		<div id="tutorial3"
+			data-role="page"
+			data-theme="a"
+			data-title="Tutorial Step Three">
+				<div class="ui-body-a ui-content tutorial" data-role="content">
 				    <h1>Join a group to tackle bigger maps together</h1>
-				<!--     <a href="#four" data-transition="slide"
+				    <p>3 of 4</p>
+				    <a href="#tutorial4" data-transition="slide"
 				    	data-role="button"
 				    	data-icon="arrow-r"
 				    	data-theme="b">
-				    	Next</a> -->
+				    	Next</a>
 				</div>
-
-				<div id="four" class="ui-body-a ui-content">
+		</div>
+	<!--Page: Tutorial 4-->
+		<div id="tutorial4"
+			data-role="page"
+			data-theme="a"
+			data-title="Tutorial Step Four">
+				<div class="ui-body-a ui-content tutorial" data-role="content">
 				    <h1>Compete for a spot on the leaderboard</h1>
+				    <p>4 of 4</p>
 				    <a href="#home"
 				    	data-role="button"
 				    	data-icon="arrow-r"
 				    	data-theme="b">
 				    	Start your run</a>
 				    </div>
-
-			</div>
 		</div>
 
 
