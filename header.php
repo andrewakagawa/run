@@ -10,46 +10,38 @@ gamehack
 include_once "connect_to_mysql.php";
 
 
-$toplinks = "";
-if (isset($_SESSION['id'])) {
-	// Put stored session variables into local php variable
-
-    $userid = $_SESSION['id'];
-
-    $toplinks = '<li><a href="user.php?id=' . $userid . '">Home</a></li>
-	<li><a href="logout.php">Log Out</a></li>';
-
-} else {
-	$toplinks = '<li><a href="join.php">Register</a></li>
-	<li><a href="login.php">Login</a></li>';
-}
 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Run</title>
-<link href="css/bootstrap-2.3.2.css" rel="stylesheet">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <title>Run Quest</title>
+
+  <!-- external links to jquery -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+  <!--[if lte IE 8]>
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+  <![endif]-->
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+
+  <!-- external links to phonegap-->
+  <script src="phonegap.js"></script>
+
+  <!-- internal link to app.js-->
+  <script src="app.js"></script>
+
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; left:0; width:100%; height:100%; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 </head>
 
-<body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">Run</a>
-        </div>
-          <ul class="nav navbar-nav">
-            <?php echo $toplinks; ?>
-          </ul>
-      </div>
-    </div>

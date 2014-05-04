@@ -1,8 +1,3 @@
-<?php include 'header.php';?>
-  <div id="wrap">
-    <div class="page">
-
-
 <?php
 
 // Set error message as blank upon arrival to page
@@ -62,7 +57,7 @@ if (isset($_POST['Submit'])){
       mysql_query("UPDATE users SET lastlogin=now() WHERE id='$id'");
 
       // Print success message here if all went well then exit the script
-      header("location: user.php?id=$id");
+      header("location: myprofile.php?id=$id");
 
       exit(); // Exit so the form and page does not display, just this success message
     } // Close else after database duplicate field value checks

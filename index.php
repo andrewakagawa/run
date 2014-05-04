@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Run Quest</title>
-
-  <!-- external links to jquery -->
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-  <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-  <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
-  <!--[if lte IE 8]>
-     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
-  <![endif]-->
-  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-
-
-  <!-- external links to phonegap-->
-  <script src="phonegap.js"></script>
-
-  <!-- internal link to app.js-->
-  <script src="app.js"></script>
-
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; left:0; width:100%; height:100%; }
-  </style>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-</head>
+<?php include 'header.php'; ?>
 
 <Body>
 
@@ -64,18 +35,7 @@
   <!-- end content -->
 
   <!-- footer -->
-  <div data-role="footer" data-position="fixed" data-id="vs_footer">
-
-  <!-- navbar -->
-    <div data-role="navbar">
-      <ul>
-        <li><a href="#debug" data-role="button" data-icon="arrow-r">Debug</a></li>
-        <li><a href="#login" data-role="button" data-icon="arrow-r" >Login</a></li>
-      </ul>
-    </div>
-  <!-- navbar -->
-
-  </div>
+    <?php include 'footer.php';?>
   <!-- end footer -->
 </div>
 <!--end page -->
@@ -97,6 +57,17 @@
       <div align="center">
         <h3>Login here</h3>
         <form role="form" action="login.php" method="post" enctype="multipart/form-data">
+
+          <label>User Name:</label>
+          <input name="name" type="text" value="<?php echo "$name"; ?>"  class="form-control"/>
+
+          <label>Password:</label>
+          <input name="password" type="password" value="<?php echo "$password";?>" class="form-control" />
+          <button name="Submit" type="submit" value="Submit Form" class="btn btn-primary"> Submit </button>
+
+        </form>
+        <h3>Register here</h3>
+        <form role="form" action="join.php" method="post" enctype="multipart/form-data">
 
           <label>User Name:</label>
           <input name="name" type="text" value="<?php echo "$name"; ?>"  class="form-control"/>

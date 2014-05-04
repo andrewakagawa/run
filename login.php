@@ -1,8 +1,5 @@
-<?php include 'header.php'; ?>
-
-  <div id="wrap">
-    <div class="page">
 <?php
+
 
 if ($_POST['name']) {
   //Connect to the database through our include
@@ -37,7 +34,7 @@ if ($_POST['name']) {
       mysql_query("UPDATE users SET lastlogin=now() WHERE name='$name'");
 
       // Print success message here if all went well then exit the script
-      header("location: user.php?id=$id");
+      header("location: myprofile.php?id=$id");
       exit();
 
     } // close while
@@ -48,55 +45,7 @@ if ($_POST['name']) {
     exit();
   }
 }// close if post
-echo $name;
-echo $password;
 
 
 
 ?>
-
-      <div align="center" style>
-       <h3><br />
-         <br />
-       Login here<br />
-       <br />
-       </h3>
-  <form role="form" action="login.php" method="post" enctype="multipart/form-data">
-
-      <div align="center"><font color="#FF0000"><?php echo "$errorMsg"; ?></font></div>
-
-    <div class="row">
-     <div class="span12">
-        <div class="form-group">
-          <label class="4">User Name:</label>
-            <div class="8">
-             <input name="name" type="text" value="<?php echo "$name"; ?>"  class="form-control"/>
-          </div>
-        </div>
-       </div>
-      </div>
-
-    <div class="row">
-     <div class="span12">
-        <div class="form-group">
-          <label class="span4">Password:</label>
-            <div class="span8">
-                <input name="password" type="password" value="<?php echo "$password";?>" class="form-control" />
-                <font size="-2" color="#006600">(letters or numbers only, no spaces no symbols)</font>
-          </div>
-        </div>
-       </div>
-      </div>
-
-        <div class="form-group">
-         <div align="center">
-          <button name="Submit" type="submit" value="Submit Form" class="btn btn-primary"> Submit </button>
-         </div>
-        </div>
-
-    </form>
-
-   </div>
-</div>
-
-<?php include 'footer.php' ?>
