@@ -1,4 +1,3 @@
-
 //initialize variables
 var map        = null;
 var GeoWatchID = null;
@@ -22,20 +21,25 @@ var 2lat=null;
 var 2lng=null;
 
 
+
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
 document.addEventListener("deviceready", onDeviceReady, false);
  
 function onDeviceReady() {
-	
+
 	// Instantiate a geolocation watch 
 	GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
-		
+
+	trackID = setInterval ( watchLocation, 1000 );		
+
+	timerID = setInterval ( watchTimer, 1000 );
+
 }
 
 
 // onSuccess Geolocation
 function onGeolocationSuccess(position) {
-	
+
 	lat       = position.coords.latitude;
 	lng       = position.coords.longitude;
 	acr       = position.coords.accuracy;
@@ -44,20 +48,20 @@ function onGeolocationSuccess(position) {
 	heading   = position.coords.heading;
 	speed     = position.coords.speed;
 
-	
+
 	map = L.map('map', { zoomControl:false }).setView([lat , lng], 15);	
 
 	// add an OpenStreetMap tile layer
 	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 	}).addTo(map);
-	
+
 	marker = L.marker([lat, lng]);
 		map.addLayer(marker);
 		//marker.bindPopup('add a comment here')
 		//.openPopup();	
 }
-	
+
 // onError Callback receives a PositionError object
 //
 function onGeolocationError(error) {
@@ -65,18 +69,8 @@ function onGeolocationError(error) {
 			  'message: ' + error.message + '\n');
 }
 
-function start() {
-        //set initial time	
-	timestamp = new Date();
+function watchLocation(){
 
-        //set initial geopos
-        1lat = lat;
-        1lng = lng;
-
-	track = setInterval ( startSession, 1000 );		
-}
-
-function startSession(){
 
 	// add a marker in the given location, attach some popup content to it and open the popup		
 	var circleMarker = L.circleMarker([lat, lng],{
@@ -84,14 +78,19 @@ function startSession(){
 		radius: 7,
 		fillOpacity: '1'
 	}).addTo(map);
-		
+
 	marker.setLatLng([lat, lng]);	
+}
+
+function timer() {	
+	timestamp = new Date();
+
+}
+
+function watchTimer(){
 	time = new Date();
 	var elapsed = time - timestamp;
-
-        var dist = getDistance(1lat, 1lng, lat, lng);
-
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: '+ dist;	
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
 }
 
 function getDistance(lat1,lon1,lat2,lon2) {
