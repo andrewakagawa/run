@@ -97,7 +97,6 @@ function watchTimer(){
 	total_dist += dist;
 
         //print to the app
-	document.getElementById('track').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
 
         //reset lat,lng,time for next watch
