@@ -3,25 +3,24 @@
 <head>
 	<meta charset="utf-8" />
 	<title>Run Quest</title>
-	
+
     <!-- external links to jquery -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>  
-   
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+
    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
  <!--[if lte IE 8]>
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
  <![endif]-->
   <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
-  
- 
-    <!-- external links to phonegap-->      
+
+
+    <!-- external links to phonegap-->
 	<script src="phonegap.js"></script>
-    
+
     <!-- internal link to app.js-->
 	<script src="app.js"></script>
-        
 
   <style>
     body { margin:0; padding:0; }
@@ -37,7 +36,7 @@
 		data-role="page"
 		data-theme="a"
 		data-title="View Source: Home">
-        
+
         <!-- header -->
 		<div data-role="header"
 			data-position="fixed">
@@ -48,49 +47,56 @@
 				data-rel="dialog"
 				class="ui-btn-right"
 				>Info</a>
-		</div>  
+		</div>
         <!-- end header -->
-        
+
         <!-- content -->
 	<div data-role="content" class="ui-block-a" >
-              
-  			  
+
               <div id="map"></div><!--prints the map-->
 
-              <button onClick="start()">Start</button>	
+              <button onClick="start()">Start</button>
               <button onClick="stop()">Stop</button>
+
+              <form role="form" action="login.php" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" name="dist" id="distance" value="" />
+                <button name="Submit" type="submit" value="Post"> Submit </button>
+
+              </form>
+
               <p id="track">Loading...</p>
 
 	</div>
-        <!-- end content --> 
-        
+        <!-- end content -->
+
         <!-- footer -->
         <div data-role="footer"
 			data-position="fixed"
 			data-id="vs_footer">
-			
+
             <!-- navbar -->
             <div data-role="navbar">
 				<ul>
-					<li><a href="#debug" 
+					<li><a href="#debug"
 					data-role="button"
 					data-icon="arrow-r"
-					>Debug</a></li>                      
+					>Debug</a></li>
 				</ul>
 			</div>
             <!-- navbar -->
-		
+
         </div>
-        <!-- end footer -->             
+        <!-- end footer -->
 	</div>
     <!--end page -->
-    
+
         <!-- Page: Geolocation -->
 	<div id="debug"
 		data-role="page"
         data-theme="a"
 		data-title="View Source: Debug">
-		
+
         <!-- header -->
         <div data-role="header"
 			data-position="fixed"
@@ -107,7 +113,7 @@
 				>Info</a>
 		</div>
         <!-- header -->
-        
+
         <!-- content -->
         <div data-role="content">
         		<div id="developerData">
@@ -115,16 +121,16 @@
                 </div>
         </div>
         <!-- end content -->
-       
+
 		<!-- footer -->
         <div data-role="footer"
 			data-position="fixed"
 			data-id="vs_footer">
-            
+
             <!-- navbar -->
             <div data-role="navbar">
 				<ul>
-					<li><a href="#" 
+					<li><a href="#"
 					data-role="button"
 					data-icon="arrow-l"
                     data-rel="back"
@@ -132,7 +138,7 @@
 				</ul>
 			</div>
             <!-- navbar -->
-            
+
 		</div>
         <!-- end footer -->
 	</div>

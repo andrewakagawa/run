@@ -22,9 +22,9 @@ var dist = null;
 var total_dist = null;
 
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
  
-function onDeviceReady() {
+//function onDeviceReady() { //lets go directly through the browser
 
 	// Instantiate a geolocation watch 
 	GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
@@ -33,7 +33,7 @@ function onDeviceReady() {
 
 	timerID = setInterval ( watchTimer, 1000 );
 
-}
+//}
 
 
 // onSuccess Geolocation
@@ -114,6 +114,7 @@ function watchTimer(){
         //print to the app
 	document.getElementById('track').innerHTML = 'time: ' + elapsed + ' sec <br>speed: ' + speed + ' meters per sec <br>distance: ' + total_dist + ' meters';	
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + ' sec <br>speed: ' + speed + ' meters per sec <br>distance: ' + total_dist + ' meters';	
+        document.getElementById('distance').value = total_distance;
 
         //reset lat,lng,time for next watch
         last_lat = lat;
