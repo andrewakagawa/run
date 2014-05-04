@@ -89,18 +89,21 @@ function watchTimer(){
         //set new timestamp
 	time = new Date();
 
-        //get elapsed time from start
-	var elapsed = (time - timestamp)/1000;
-	
+        //wait to hit start button
         if (timestamp != null){
+        	
+          //get elapsed time from start
+	  var elapsed = (time - timestamp)/1000;
+	      	
           //watch distance
           var dist = getDistance(last_lat, last_lng, lat, lng);
 	  total_dist += dist;
+	  
         }
 
         //print to the app
-	document.getElementById('track').innerHTML = 'time: ' + elapsed + 'sec <br>speed: ' + speed + 'meters per sec <br>distance: ' + total_dist + 'meters';	
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + 'sec <br>speed: ' + speed + 'meters per sec <br>distance: ' + total_dist + 'meters';	
+	document.getElementById('track').innerHTML = 'time: ' + elapsed + ' sec <br>speed: ' + speed + ' meters per sec <br>distance: ' + total_dist + ' meters';	
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + ' sec <br>speed: ' + speed + ' meters per sec <br>distance: ' + total_dist + ' meters';	
 
         //reset lat,lng,time for next watch
         last_lat = lat;
