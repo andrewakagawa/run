@@ -17,7 +17,7 @@ var time       = null;
 
 var init_lat = null;
 var init_lng = null;
-var total_dist = null;
+
 
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -88,9 +88,8 @@ function watchTimer(){
 	time = new Date();
 	var elapsed = time - timestamp;
         var dist = getDistance(last_lat, last_lng, lat, lng);
-	total_dist += dist;
-
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
+        total_dist 
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed + '<br>distance: ' + dist;	
         last_lat = lat;
         last_lng = lng;
 
@@ -111,5 +110,5 @@ function getDistance(lat1,lon1,lat2,lon2) {
 }
 
 function deg2rad(deg) {
-  return deg * (Math.PI/180)
+	return deg * (Math.PI/180)
 }
