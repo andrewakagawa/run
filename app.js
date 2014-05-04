@@ -89,7 +89,7 @@ function startSession(){
 	time = new Date();
 	var elapsed = time - timestamp;
 
-        var dist = getDistance(1lat, 1lng, lat, lng)
+        var dist = getDistance(1lat, 1lng, lat, lng);
 
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: '+ dist;	
 }
