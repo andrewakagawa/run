@@ -10,6 +10,21 @@
 	font-weight:normal;
 }
 
+.icon {
+	display:block;
+	margin:0 auto;
+	width:100px;
+	opacity:0.6;
+	margin-bottom:50px;
+}
+
+.groupicon {
+	width:100%;
+}
+
+.groupicon .icon {
+	display:inline;
+}
 
 .fit-default {
 	display:block;
