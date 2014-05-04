@@ -24,10 +24,6 @@ function onDeviceReady() {
 	// Instantiate a geolocation watch 
 	GeoWatchID = navigator.geolocation.watchPosition(onGeolocationSuccess, onGeolocationError, { enableHighAccuracy: true, timeout: 30000 });
 		
-	trackID = setInterval ( watchLocation, 1000 );		
-
-	timerID = setInterval ( watchTimer, 1000 );
-		
 }
 
 
@@ -63,9 +59,13 @@ function onGeolocationError(error) {
 			  'message: ' + error.message + '\n');
 }
 
-function watchLocation(){
-	
-	
+function start() {	
+	timestamp = new Date();
+	track = setInterval ( startSession, 1000 );		
+}
+
+function startSession(){
+
 	// add a marker in the given location, attach some popup content to it and open the popup		
 	var circleMarker = L.circleMarker([lat, lng],{
     	color: 'red',
@@ -74,14 +74,6 @@ function watchLocation(){
 	}).addTo(map);
 		
 	marker.setLatLng([lat, lng]);	
-}
-
-function timer() {	
-	timestamp = new Date();
-
-}
-
-function watchTimer(){
 	time = new Date();
 	var elapsed = time - timestamp;
 	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>test: '+ time +'<br>speed: ' + speed;	
