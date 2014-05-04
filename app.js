@@ -90,7 +90,7 @@ function watchTimer(){
 	time = new Date();
 
         //get elapsed time from start
-	var elapsed = time - timestamp;
+	var elapsed = (time - timestamp)/1000;
 	
         if (timestamp != null){
           //watch distance
@@ -99,8 +99,8 @@ function watchTimer(){
         }
 
         //print to the app
-	document.getElementById('track').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
-	document.getElementById('geo').innerHTML = 'time: ' + elapsed + '<br>speed: ' + speed + '<br>distance: ' + total_dist;	
+	document.getElementById('track').innerHTML = 'time: ' + elapsed + 'sec <br>speed: ' + speed + 'meters per sec <br>distance: ' + total_dist + 'meters';	
+	document.getElementById('geo').innerHTML = 'time: ' + elapsed + 'sec <br>speed: ' + speed + 'meters per sec <br>distance: ' + total_dist + 'meters';	
 
         //reset lat,lng,time for next watch
         last_lat = lat;
@@ -109,7 +109,7 @@ function watchTimer(){
 }
 
 function getDistance(lat1,lon1,lat2,lon2) {
-	var R = 6371; // Radius of the earth in m
+	var R = 6371000; // Radius of the earth in meters
 	var dLat = deg2rad(lat2-lat1);  // deg2rad below
 	var dLon = deg2rad(lon2-lon1); 
 	var a = 
