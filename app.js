@@ -17,6 +17,8 @@ var time       = null;
 
 var last_lat = null;
 var last_lng = null;
+var elapsed = null;
+var dist = null;
 var total_dist = null;
 
 // Waits until the device is ready before starting the js function(s) and then calls loadMap
@@ -85,6 +87,13 @@ function start() {
         last_lng = lng;
 }
 
+function stop() {	
+
+	timestamp = null;
+
+}
+
+
 function watchTimer(){
         //set new timestamp
 	time = new Date();
@@ -93,10 +102,10 @@ function watchTimer(){
         if (timestamp != null){
         	
           //get elapsed time from start
-	  var elapsed = (time - timestamp)/1000;
+	  elapsed = (time - timestamp)/1000;
 	      	
           //watch distance
-          var dist = getDistance(last_lat, last_lng, lat, lng);
+          dist = getDistance(last_lat, last_lng, lat, lng);
 	  total_dist += dist;
 	  
         }
