@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Run Quest</title>
+	
+    <!-- external links to jquery -->
+   	<link rel="stylesheet" href="themes/runquest.min.css" />
+   	 <link rel="stylesheet" href="runquestcustom.css" />
+
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile.structure-1.4.2.min.css" />
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+
+  <style>
+    body { margin:0; padding:0; }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<Body>
+	<!--Page: Welcome -->
+	<div id="leaderboard"
+		data-role="page"
+		data-theme="a"
+		data-title="My Leaderboards">
+
+	<div data-role="header">
+	<a href="#side-menu" class="menu-link">&#9776;</a>
+		<h1 class="push">My Leaderboards</h1>
+	</div>
+
+	<div data-role="content">
+		<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+     <thead>
+       <tr>
+         <th>Rank</th>
+         <th>Rabbit</th>
+         <th>Runner</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <th>1</th>
+         <td><img class="avatarmed" src="images/crown_fit_blue.png" /></td>
+         <td>runner185</td>
+       </tr>
+       <tr>
+         <th>2</th>
+         <td><img class="avatarmed" src="images/badge_weekly_yellow.png" /></td>
+         <td>kitty97</td>
+       </tr>
+       <tr>
+         <th>3</th>
+         <td><img class="avatarmed" src="images/speedy_fit_blue.png" /></td>
+         <td>coffeelovr8376</td>
+       </tr>
+       <tr>
+         <th>4</th>
+         <td><img class="avatarmed" src="images/flower_weekly_default.png" /></td>
+         <td>angel2858</td>
+       </tr>
+       <tr>
+         <th>5</th>
+         <td><img class="avatarmed" src="images/bowtie_monthly_yellow.png" /></td>
+         <td>diana275</td>
+       </tr>
+       <tr>
+         <th>6</th>
+         <td><img class="avatarmed" src="images/pacifier_weekly_default.png" /></td>
+         <td>andrew19677</td>
+       </tr>
+       <tr>
+         <th>7</th>
+         <td><img class="avatarmed" src="images/geek_monthly_blue.png" /></td>
+         <td>skater825</td>
+       </tr>
+       <tr>
+         <th>8</th>
+         <td><img class="avatarmed" src="images/flower_lazy_pink.png" /></td>
+         <td>fairie8276</td>
+       </tr>
+       <tr>
+         <th>9</th>
+         <td><img class="avatarmed" src="images/bowtie_monthly_blue.png" /></td>
+         <td>hipster168</td>
+       </tr>
+       <tr>
+         <th>10</th>
+         <td><img class="avatarmed" src="images/birthday_lazy_default.png" /></td>
+         <td>potato2684</td>
+       </tr>
+     </tbody>
+   </table>
+
+	</div>
+
+
+
+
+<div class="leaderboardmenu" data-role="navbar" data-grid="c" data-position="fixed">
+    <ul>
+        <li><a href="#" class="ui-btn-active">50-yd dash</a></li>
+        <li><a href="#">Consistency</a></li>
+        <li><a href="#">Distance</a></li>
+        <li><a href="#">Improvement</a></li>
+    </ul>
+</div><!-- /navbar -->
+
+
+	<div data-role="panel" id="side-menu"
+		data-position="left"
+		data-display="push"
+		data-theme="a">
+		<div class="ui-panel-inner">			<ul class="jqm-list ui-alt-icon ui-nodisc-icon ui-listview">
+				<li>My Info</li>
+				<li><a href="weeklymap.html">My Map</a></li>
+				<li>My progress</li>
+				<li><a href="leaderboard.html">Leaderboards</a></li>
+				<li>&nbsp;</li>
+				<li>My Group</li>
+				<li><a href="groupmap.html">Group Map</a></li>
+				<li>&nbsp;</li>
+				<li><a href="http://ec2-54-187-143-7.us-west-2.compute.amazonaws.com/run_app/">Log a run</a>
+			</ul>
+		</div>
+	</div>
+
+
+</Body>
+</Html>
